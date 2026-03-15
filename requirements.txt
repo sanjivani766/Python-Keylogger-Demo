@@ -1,0 +1,6 @@
+pynput
+pyautogui
+pyperclip
+pygetwindow
+pillow
+cryptography
